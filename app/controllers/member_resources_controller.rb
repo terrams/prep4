@@ -1,0 +1,2 @@
+class MemberResourcesController < ApplicationController
+end
