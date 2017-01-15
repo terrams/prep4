@@ -1,0 +1,44 @@
+<h1>Create Member</h1>
+<%= form_tag '/members', method: :post do  %>
+  <div>
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, @member ? @member.first_name : "" %>
+  </div>
+  <div>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, @member ? @member.last_name : "" %>
+  </div>
+  <div>
+    <%= label_tag :member_type %>
+    <%= text_field_tag :member_type, @member ? @member.member_type : "" %>
+  </div>
+  <div>
+    <%= label_tag :gender %>
+    <%= text_field_tag :gender, @member ? @member.gender : "" %>
+  </div>
+  <div>
+    <%= label_tag :active %>
+    <%= text_field_tag :active, @member ? @member.active : "" %>
+  </div>
+  <div>
+    <%= label_tag :work_phone %>
+    <%= text_field_tag :work_phone, @member ? @member.work_phone : "" %>
+  </div>
+  <div>
+    <%= label_tag :cell_phone %>
+    <%= text_field_tag :cell_phone, @member ? @member.cell_phone : "" %>
+  </div>
+  <div>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, @member ? @member.email : "" %>
+  </div>
+  <div>
+    <%= label_tag :photo %>
+    <%= text_field_tag :photo, @member ? @member.photo : "" %>
+  </div>
+  <div>
+    <%= label_tag :special_needs %>
+    <%= text_field_tag :special_needs, @member ? @member.special_needs : "" %>
+  </div>
+  <%= submit_tag "Submit" %>
+<% end %>

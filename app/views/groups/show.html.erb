@@ -1,0 +1,39 @@
+<img src="@group.photo">
+<h1><%= @group.name %></h1>
+<div>
+  <p>Home Base Information</p>
+  <div>Home Phone: <%= @group.base_phone %></div>
+  <div>Zip code: <%= @group.base_zip %></div>
+</div>
+<div>
+  <p>Local Meetup</p>
+  <div>Location: <%= @group.local_meetup %></div>
+  <div>Zip code: <%= @group.local_zip %></div>
+</div>
+<div>
+  <p>Remote Meetup</p>
+  <div>Location: <%= @group.remote_meetup %></div>
+  <div>Zip code: <%= @group.remote_zip %></div>
+</div>
+<div>
+  <p>Crisis Contact</p>
+  <div>First Name: <%= @group.crisis_contact_first_name %></div>
+  <div>Last name: <%= @group.crisis_contact_last_name %></div>
+  <div>Home Phone: <%= @group.cc_home_phone %></div>
+  <div>Cell Phone: <%= @group.cc_cell_phone %></div>
+  <div>Email: <%= @group.cc_email %></div>
+  <div>Zip Code: <%= @group.cc_zip %></div>
+</div>
+
+<h3>Current Members</h3>
+<div >
+  <% @members.each do |member| %>
+    <div><img src="member.photo"></div>       
+    <div><%= member.first_name.capitalize %> <%= member.last_name.capitalize %></div>
+  <% end %>
+</div>
+
+
+<%= link_to "Edit", "/groups/#{@group.id}/edit", class: "btn btn-success" %>
+<%= link_to "Delete", "/groups/#{@group.id}", {method: :delete, class: "btn btn-danger" }%>
+

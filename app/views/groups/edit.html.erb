@@ -1,1 +1,70 @@
-edit.html.erb
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div>
+      <h1>Edit Group</h1>
+      <%= form_tag "/groups/#{@group.id}", method: :patch do %>
+        <div>
+          <%= label_tag :name %>
+          <%= text_field_tag :name, @group.name %>
+        </div>
+        <div>
+          <%= label_tag :base_phone %>
+          <%= text_field_tag :base_phone, @group.base_phone %>
+        </div>
+        <div>
+          <%= label_tag :base_zip %>
+          <%= text_field_tag :base_zip, @group.base_zip %>
+        </div>
+        <div>
+          <%= label_tag :photo %>
+          <%= text_field_tag :photo, @group.photo %>
+        </div>
+        <div>
+          <%= label_tag :icon %>
+          <%= text_field_tag :icon, @group.icon %>
+        </div>
+        <div>
+          <%= label_tag :local_meetup %>
+          <%= text_field_tag :local_meetup, @group.local_meetup %>
+        </div>
+        <div>
+          <%= label_tag :local_zip %>
+          <%= text_field_tag :local_zip, @group.local_zip %>
+        </div>
+        <div>
+          <%= label_tag :remote_meetup %>
+          <%= text_field_tag :remote_meetup, @group.remote_meetup %>
+        </div>
+        <div>
+          <%= label_tag :remote_zip %>
+          <%= text_field_tag :remote_zip, @group.remote_zip %>
+        </div>
+        <div>
+          <%= label_tag :crisis_contact_first_name %>
+          <%= text_field_tag :crisis_contact_first_name, @group.crisis_contact_first_name %>
+        </div>
+        <div>
+          <%= label_tag :crisis_contact_last_name %>
+          <%= text_field_tag :crisis_contact_last_name, @group.crisis_contact_last_name %>
+        </div>
+        <div>
+          <%= label_tag :cc_home_phone %>
+          <%= text_field_tag :cc_home_phone, @group.cc_home_phone %>
+        </div>
+        <div>
+          <%= label_tag :cc_cell_phone %>
+          <%= text_field_tag :cc_cell_phone, @group.cc_cell_phone %>
+        </div>
+        <div>
+          <%= label_tag :cc_email %>
+          <%= text_field_tag :cc_email, @group.cc_email %>
+        </div>
+        <div>
+          <%= label_tag :cc_zip %>
+          <%= text_field_tag :cc_zip, @group.cc_zip %>
+        </div>
+        <%= submit_tag "Update Group" %>
+      <% end %>
+    </div>
+  </div>
+</div>

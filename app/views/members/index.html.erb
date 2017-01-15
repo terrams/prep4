@@ -1,0 +1,6 @@
+<div >
+  <% @members.each do |member| %>
+    <div><img src="member.photo"></div>       
+    <div><%= member.first_name.capitalize %> <%= member.last_name.capitalize %></div>
+  <% end %>
+</div>

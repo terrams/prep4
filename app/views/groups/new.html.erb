@@ -60,9 +60,5 @@
     <%= label_tag :cc_zip %>
     <%= text_field_tag :cc_zip, @group ? @group.cc_zip : "" %>
   </div>
-  <div>
-    <%= label_tag :user_id %>
-    <%= text_field_tag :user_id, @group ? @group.user_id : "" %>
-  </div>
   <%= submit_tag "Submit" %>
 <% end %>

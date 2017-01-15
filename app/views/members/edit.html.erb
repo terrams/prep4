@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div>
+      <h1>Edit member</h1>
+      <%= form_tag "/members/#{@member.id}", method: :patch do %>
+        <div>
+          <%= label_tag :first_name %>
+          <%= text_field_tag :first_name, @member.first_name %>
+        </div>
+        <div>
+          <%= label_tag :last_name %>
+          <%= text_field_tag :last_name, @member.last_name %>
+        </div>
+        <div>
+          <%= label_tag :member_type %>
+          <%= text_field_tag :member_type, @member.member_type %>
+        </div>
+        <div>
+          <%= label_tag :gender %>
+          <%= text_field_tag :gender, @member.gender %>
+        </div>
+        <div>
+          <%= label_tag :active %>
+          <%= text_field_tag :active, @member.active %>
+        </div>
+        <div>
+          <%= label_tag :work_phone %>
+          <%= text_field_tag :work_phone, @member.work_phone %>
+        </div>
+        <div>
+          <%= label_tag :cell_phone %>
+          <%= text_field_tag :cell_phone, @member.cell_phone %>
+        </div>
+        <div>
+          <%= label_tag :email %>
+          <%= text_field_tag :email, @member.email %>
+        </div>
+        <div>
+          <%= label_tag :photo %>
+          <%= text_field_tag :photo, @member.photo %>
+        </div>
+        <div>
+          <%= label_tag :special_needs %>
+          <%= text_field_tag :special_needs, @member.special_needs %>
+        </div>
+         <%= submit_tag "Update member" %>
+      <% end %>
+    </div>
+  </div>
+</div>

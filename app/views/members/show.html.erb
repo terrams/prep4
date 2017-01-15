@@ -1,0 +1,19 @@
+<div >
+    <div><img src="@member.photo"></div>       
+    <div>Member Information
+      <div>First Name: <%= @member.first_name %></div>
+      <div>Last Name: <%= @member.last_name %></div>
+      <div>Member_type: <%= @member.member_type %></div>
+      <div>Gender: <%= @member.gender %></div>
+      <div>Active : <%= @member.active %></div>
+      <div>Special Needs: <%= @member.special_needs %></div>
+    </div>
+    <div>Member Contacts
+      <div>Work Phone: <%= @member.work_phone %></div>
+      <div>Cell Phone: <%= @member.cell_phone %></div>
+      <div>Email: <%= @member.email %></div>
+    </div>
+</div>
+
+<%= link_to "Edit", "/members/#{@member.id}/edit", class: "btn btn-success" %>
+<%= link_to "Delete", "/members/#{@member.id}", {method: :delete, class: "btn btn-danger" }%>
