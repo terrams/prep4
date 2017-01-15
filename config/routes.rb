@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  get '/' => 'groups#home'                      # app landing page              
+            
   get '/groups/new' => 'groups#new'             # renders if no group - from login or signup
   post '/groups' => 'groups#create'             
   get '/groups/:id' => 'groups#show'            # renders if groups exists - from login
@@ -21,13 +20,14 @@ Rails.application.routes.draw do
   # get '/products/:id' => 'products#show'
   # get '/products/:id/edit' => 'products#edit'
   # patch '/products/:id' => 'products#update'
-  # delete '/products/:id' => 'products#destroy'
+  # delete '/products/:id' => 'products#destroy' 
 
+  get '/' => 'users#index'
   get  '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
   get  '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get  '/logout' => 'sessions#destroy'  
+  get  '/logout' => 'sessions#destroy' 
 
 end

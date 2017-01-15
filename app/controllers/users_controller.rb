@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    render 'index.html.erb'
+  end
+
   def new
     render 'new.html.erb'
   end
@@ -14,15 +18,13 @@ class UsersController < ApplicationController
 
     if user.save
       session[:user_id] = user.id
-      flash[:success] = 'Successfully created account!'
+      # flash[:success] = 'Successfully created account!'
       redirect_to '/groups/new'    
-
     else
-      flash[:warning] = 'Invalid email or password!'
+      # flash[:warning] = 'Invalid email or password!'
       redirect_to '/signup'
     end
     
   end
 
 end
-
