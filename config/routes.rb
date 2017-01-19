@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   # patch '/products/:id' => 'products#update'
   # delete '/products/:id' => 'products#destroy' 
 
-  get '/' => 'users#index'
+  get '/' => 'users#landing'
   get  '/signup' => 'users#new'
   post '/signup' => 'users#create'
 

@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       # flash[:success] = 'Successfully logged in!'
-      group_id = Group.find_by(user_id: current_user.id)
-      redirect_to "/groups/#{group_id}"
+      group = Group.find_by(user_id: current_user.id)
+      redirect_to "/groups/#{group.id}"
     else
       # flash[:warning] = 'Invalid email or password!'
       redirect_to '/login'

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  def index
-    render 'index.html.erb'
+  def landing
+    render 'landing.html.erb'
   end
 
   def new

@@ -1,2 +1,4 @@
 class MemberResourcesController < ApplicationController
+  
+
 end
