@@ -25,6 +25,7 @@
 
 
         <!-- Definity CSS -->
+        <link rel="stylesheet" href="/assets/styles/app.css">        
         <link rel="stylesheet" href="/assets/styles/main.css">
         <link rel="stylesheet" href="/assets/styles/responsive.css">
         <link rel="stylesheet" href="/assets/styles/app.css">
@@ -44,7 +45,7 @@
 
 
         <!-- ========== Preloader ========== -->
-        <% if !(current_user.id) %> 
+        <% if current_page?('/') %> 
           <div class="preloader">
             <img src="assets/images/loader.svg" alt="Loading...">
           </div>  
@@ -62,9 +63,7 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <!-- Logo -->
-<!--               <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="assets/images/logo.png" alt="Definity - Logo"></a>
- -->            </div><!-- / .navbar-header -->
+             </div><!-- / .navbar-header -->
 
             <!-- Navbar Links -->
             <div id="navbar" class="navbar-collapse collapse">
@@ -74,41 +73,18 @@
               
               <!-- Navbar Links Right -->
               <ul class="nav navbar-nav navbar-right">
-
-                <!-- Link -->
-                <li class="dropdown mega-fw">
-                  <a href="#" aria-expanded="false">Link 1<span class="caret"></span></a>
-                </li><!-- / Link -->
-                
-                <!-- Link -->
-                <li class="dropdown mega-fw">
-                  <a href="#" aria-expanded="false">Link 1<span class="caret"></span></a>
-                </li><!-- / Link -->
-
-                 <!-- Link -->
-                <li class="dropdown mega-fw">
-                  <a href="#" aria-expanded="false">Link 1<span class="caret"></span></a>
-                </li><!-- / Link -->
-
-                 <!-- Link -->
-                <li class="dropdown mega-fw">
-                  <a href="#" aria-expanded="false">Link 1<span class="caret"></span></a>
-                </li><!-- / Link -->
-
-                 <!-- Link -->
-                <li class="dropdown mega-fw">
-                  <a href="#" aria-expanded="false">Link 1<span class="caret"></span></a>
-                </li><!-- / Link -->
-
-                <!-- Search -->
-                <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i> Search</a>
-                  <ul class="dropdown-menu search-dropdown">
-                    <li><form action="post"><input type="search" class="form-control" placeholder="Search..."></form></li>
-                  </ul>
-                </li> -->
-                <!-- / Search -->
-
+                <% if (current_user) %>                 
+                  <!-- Link -->
+                  <li class="dropdown mega-fw">
+                    <a href="/logout" aria-expanded="false">Logout<span class="caret"></span></a>
+                  </li><!-- / Link -->
+               
+                  <!-- Link -->
+                  <li class="dropdown mega-fw">
+                    <a href="/login" aria-expanded="false">Logout<span class="caret"></span></a>
+                  </li><!-- / Link -->
+                  
+                <% end %>                 
               </ul><!-- / .nav .navbar-nav .navbar-right -->
             </div><!--/.navbar-collapse -->
           </div><!-- / .container -->

@@ -1,17 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1 class= "blue_2">Get Prepped!</h1><br>
+
+<!-- ========== Page Title ========== -->
+<section>
+  <header class="pt-custom pt-custom-dark">
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-sm-6 pad1">
+          <a style="float:left" href="/logout"><img src="assets/images/logo.png" height="75px" width="75px" alt="Prepper logo"></a>
+          <div class="myheader">Sign Up!<br>
+            <div class="mysubhdr">Get started on your plan</div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div><!-- / .row -->
-</div>
+  </header>
+</section>
+
 
 <!-- ========== Login Form ========== -->
 
 <div class="login-2">
   <div class="bg-overlay">
  
-    <div class="container no-padding">
+    <div class="container">
       <div class="row ws-m">
         <div class="col-md-offset-3 col-md-6">
 
@@ -20,11 +32,16 @@
 
               <h3 class="form-header">Create your account</h3>
               <%= form_tag '/signup', method: :post do  %>
-
                 <div class="form-group">
                   <div>
                     <%= label_tag :first_name %>
-                    <%= text_field_tag :first_name, "", class: 'form-control',  placeholder: 'Enter a name for your group' %>
+                    <%= text_field_tag :first_name, "", class: 'form-control',  placeholder: 'Please enter your first name' %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div>
+                    <%= label_tag :last_name %>
+                    <%= text_field_tag :last_name, "", class: 'form-control',  placeholder: 'Please enter your last name' %>
                   </div>
                 </div>
                 <div class="form-group">
@@ -41,7 +58,7 @@
                 </div>
                 <div class="form-group">
                   <div>
-                    <%= label_tag :password_confirmation %>
+                    <%= label_tag :verify_password %>
                     <%= password_field_tag :password_confirmation, "", class: 'form-control',  placeholder: 'Please re-enter password' %>
                   </div>
                 </div>

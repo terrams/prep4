@@ -145,7 +145,7 @@
 			
 			.form-content	{
 				margin-top: $ws-l;
-				padding: 100px 100px 30px 100px;
+				padding: 0px 100px 20px 100px;
 				border-bottom: 1px solid #eaeaea;				
 
 				.form-header {
@@ -178,51 +178,6 @@
 				}
 			}
 
-			.social-signup {
-				display: block;
-				height: 140px;
-
-				.social-card {
-					display: inline-block;
-					position: relative;
-					padding: 30px 50px;
-					width: 50%;
-					height: 100%;
-					float: left;
-					border-right: 1px solid #eaeaea;
-					background: #fff;
-
-					&:last-child {
-						border-right: none;
-					}
-
-					span,
-					i {
-						position: absolute;
-						transition: all .3s;
-					}
-
-					.sc-lead {
-						@extend h4;
-						display: block;
-						bottom: 60px;
-					}
-
-					.sc-info {
-						bottom: 35px;
-						color: $gray-light;
-					}
-
-					i {
-						display: inline-block;
-						right: 40px;
-						top: 40px;
-						float: right;
-						font-size: 50px;
-						color: $dark;
-						vertical-align: top;
-					}
-				} // .social-card
 
 				.fb-card {
 					transition: all .3s;
@@ -253,19 +208,6 @@
 				} // .tw-card
 			} // .social-signup
 		} // .form-wrapper
-
-		.email-signup {
-			color: $dark;
-			padding-bottom: 3px;
-			border-bottom: 1px solid rgba(17,17,17, 0);
-			transition: all .3s;
-
-
-			&:hover {
-				padding-bottom: 0;
-				margin-bottom: 3px;
-				border-bottom: 1px solid rgba(17,17,17, 1);
-			}
-		}
+		
 	}
 }

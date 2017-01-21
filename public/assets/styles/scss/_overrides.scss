@@ -7,61 +7,13 @@
   display: inline;
 }
 .mysubhdr {
-  margin: 100px 0px 0px 20px;
+  margin: 10px 0px 0px 20px;
   font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 16px;
   letter-spacing: 4px;
   font-weight: 300;
   color: #777;
-  display: inline;
-
-}
-
-.blue1 {
-  color: #337ab7;
-}
-.blue2 {
-  color: #67AECA;
-}
-.blue3 {
-  color: #89BDD3;
-}
-
-.main-content {
-  margin-top: 40px;
-}
-
-.min-padding {
-  padding-top: 40px;
-  padding-bottom: 20px;
-}
-.no-padding {
-  padding: 0px 0px 10px 0px; 
-}
-.no-margin {
-  margin: 0px 0px 0px 0px;
-}
-
-
-.bright {
-  color: white;
-}
-.work-sans {
-  font-family: 'Work Sans', sans-serif;  
-}
-.textleft {
-  text-align: left;
-}
-.no-text-transform {
-  text-transform: none;
-  color: black;
-}
-.login-2 .bg-overlay .form-wrapper .form-content {
-    margin-top: 50px;
-    padding: 40px 100px 30px 100px; 
-}
-.pad1 {
-  padding: 20px 20px 20px 20px;
+  display: inline;  
 }
 .pt-custom {
   padding-top: 20px;
@@ -73,7 +25,7 @@
   padding: 10;
 }
 .pt-custom-dark {
-  background: #696969;
+  background: #969696;
   color: #ececec;
 }
 .pt-custom-dark .breadcrumb li a:hover {
@@ -85,5 +37,6 @@
  .pt-custom-dark .breadcrumb li a {
   color: #999;
 }
-
-
+.pad1 {
+  padding: 20px 0 px 20px 0px;
+}

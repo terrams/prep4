@@ -1,12 +1,57 @@
-<h1>Login</h1>
-<%= form_tag '/login', method: :post do %>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <%= submit_tag "Submit" %>
-<% end %>
+<!-- ========== Page Title ========== -->
+<section>
+  <header class="pt-custom pt-dark">
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-sm-6 pad1">
+          <a style="float:left" href="/logout"><img src="assets/images/logo.png" height="75px" width="75px" alt="Prepper logo"></a>
+          <div class="myheader">Sign Up!<br>
+            <div class="mysubhdr">Get started on your plan</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+</section>
+
+
+<!-- ========== Login Form ========== -->
+
+<div class="login-2">
+  <div class="bg-overlay">
+ 
+    <div class="container">
+      <div class="row ws-m">
+        <div class="col-md-offset-3 col-md-6">
+
+          <div class="form-wrapper">
+            <div class="form-content">
+
+              <h3 class="form-header">Login</h3>
+              <%= form_tag '/login', method: :post do %>
+                <div class="form-group">
+                  <div>
+                    <%= label_tag :email %>
+                    <%= text_field_tag :email, "", class: 'form-control',  placeholder: 'Please enter your email address' %>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div>
+                    <%= label_tag :password %>
+                    <%= password_field_tag :password, "", class: 'form-control',  placeholder: 'Please enter your password' %>
+                  </div>
+                </div>
+                <%= submit_tag "Login", class: 'btn' %>
+              <% end %>
+
+            </div><!-- / .form-content -->
+          </div><!-- / .form-wrapper -->            
+        
+        </div><!-- / .col-md-6 -->
+      </div><!-- / .row -->
+    </div><!-- / .container -->
+
+  </div><!-- / .bg-overlay -->
+</div><!-- / .bg-login -->

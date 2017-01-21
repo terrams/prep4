@@ -10235,5 +10235,26 @@ form .input-error-2:focus {
   background: #f8f8f8;
 }
 
+.myheader {
+  font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  margin: 20px 0 0 0;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: #fff;
+  float:left;
+}
+.mysubhdr {
+  margin: 10px 0 0 0;
+  font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  margin-left: 20px;
+  font-weight: 300;
+  color: #777;
+  float:right;
+}
+
 /*# sourceMappingURL=main.css.map */
 
