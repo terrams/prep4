@@ -1,0 +1,37 @@
+/* app css */
+
+.blue_1 {
+  color: #0B3C5D;
+}
+.blue_2{
+  color: #67AECA;
+}
+.blue_3 {
+  color: #89BDD3;
+}
+.main-content {
+  margin-top: 40px;
+}
+.min-padding {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.no-padding {
+  padding: 0px 0px 10px 0px; 
+}
+.min-margin {
+  margin: 20px 0px 30px 0px;
+}
+.bright {
+  color: white;
+}
+.work-sans {
+  font-family: 'Work Sans', sans-serif;  
+}
+.textleft {
+  text-align: left;
+}
+.no-text-transform {
+  text-transform: none;
+  color: black;
+}

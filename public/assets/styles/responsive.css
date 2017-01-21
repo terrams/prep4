@@ -1120,3 +1120,16 @@
 }
 
 /*# sourceMappingURL=responsive.css.map */
+
+/* app css */
+.main-content{
+  margin-top: 40px;
+}
+.no-padding {
+  padding-top: -100px;
+}
+.bright {
+  color: yellow;
+  font-weight: 700;
+  font-size: 5.25em;
+}

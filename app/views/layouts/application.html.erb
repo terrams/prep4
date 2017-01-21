@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="/assets/fonts/et-lineicons/css/style.css">
         <link rel="stylesheet" href="/assets/fonts/linea-font/css/linea-font.css">
         <link rel="stylesheet" href="/assets/fonts/fontawesome/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">        
         <!-- Slider -->
         <link rel="stylesheet" href="/assets/styles/vendor/slick.css">
         <!-- Lightbox -->
@@ -26,6 +27,7 @@
         <!-- Definity CSS -->
         <link rel="stylesheet" href="/assets/styles/main.css">
         <link rel="stylesheet" href="/assets/styles/responsive.css">
+        <link rel="stylesheet" href="/assets/styles/app.css">
 
         <!-- JS -->
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -40,6 +42,14 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+
+        <!-- ========== Preloader ========== -->
+        <% if !(current_user.id) %> 
+          <div class="preloader">
+            <img src="assets/images/loader.svg" alt="Loading...">
+          </div>  
+        <% end %>      
+
         <!-- ========== Navigation ========== -->
 
         <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans">
@@ -53,12 +63,17 @@
               </button>
 
               <!-- Logo -->
-              <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="assets/images/logo.png" alt="Definity - Logo"></a>
-            </div><!-- / .navbar-header -->
+<!--               <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="assets/images/logo.png" alt="Definity - Logo"></a>
+ -->            </div><!-- / .navbar-header -->
 
             <!-- Navbar Links -->
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
+
+              </ul><!-- / .nav .navbar-nav -->
+              
+              <!-- Navbar Links Right -->
+              <ul class="nav navbar-nav navbar-right">
 
                 <!-- Link -->
                 <li class="dropdown mega-fw">
@@ -84,10 +99,6 @@
                 <li class="dropdown mega-fw">
                   <a href="#" aria-expanded="false">Link 1<span class="caret"></span></a>
                 </li><!-- / Link -->
-              </ul><!-- / .nav .navbar-nav -->
-              
-              <!-- Navbar Links Right -->
-              <ul class="nav navbar-nav navbar-right">
 
                 <!-- Search -->
                 <!-- <li class="dropdown">
@@ -104,7 +115,7 @@
         </nav><!-- / .navbar -->
       
 
-        <div class="main-content">
+        <div>
           <%= yield %>
         </div>
 
@@ -117,13 +128,13 @@
               <div class="row">
                 
                 <div class="col-sm-6">
-                  <small>&copy; 2015 Definity. Made by <a class="no-style-link" href="http://themeforest.net/user/octarinethemes" target="_blank">OctarineThemes</a></small>
+                  <small>&copy; 2017 Terry Ramsdale </small>
                 </div>
 
-                <div class="col-sm-6">
+<!--                 <div class="col-sm-6">
                   <small><a href="#page-top" class="pull-right to-the-top">To the top<i class="fa fa-angle-up"></i></a></small>
                 </div>
-
+ -->
               </div><!-- / .row -->
             </div><!-- / .container -->
           </div><!-- / .copyright -->
