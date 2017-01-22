@@ -78,7 +78,7 @@
   padding: 10;
 }
 .pt-custom-dark {
-  background: #696969;
+  background: #111111;
   color: #ececec;
 }
 .pt-custom-dark .breadcrumb li a:hover {
@@ -90,6 +90,8 @@
  .pt-custom-dark .breadcrumb li a {
   color: #999;
 }
+
+
 
 
 

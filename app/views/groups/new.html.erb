@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="col-sm-9 pad1">
-          <div class="myheader">Create your prep group</div>
+          <div class="myheader pad1">Create your Group</div>
         </div>
 
       </div>
@@ -21,110 +21,167 @@
 <!-- ========== Login Form ========== -->
  
 <div class="container">
-  <div class="row ws-m">
-    <div class="col-md-offset-1 col-md-8">
+
+  <div class="row ws-m no-padding">
+    <div class="col-md-offset-1 col-md-11">
 
       <div class="form-wrapper">
         <div class="form-content">
-
-          <h3 class="form-header">Your Group's Home Location</h3>
           <%= form_tag '/groups', method: :post do  %>
 
-          <p class="no-text-transform"><b>1.</b>&nbsp;&nbsp;Identify your group and your "home base" location.  This is the primary location where your group will meet to evacuate or shelter in place. </p>
-            <div class="form-group">
-              <div>
-                <%= label_tag :create_a_name_for_your_group %>
-                <%= text_field_tag :name, "", class: 'form-control',  placeholder: 'group name' %>
+            <div class="row ws-m no-padding">
+              <div class="col-md-5">             
+                <h3 class="form-header">1.&nbsp;&nbsp;Your Group</h3>
+                <p class="no-text-transform">Identify your group and your "home base" location.  This is the primary location where your group will meet to evacuate or shelter in place. </p>
+              </div>
+              <div class="col-md-offset-2 col-md-5">             
+                <h3 class="form-header">2.&nbsp;&nbsp;Local Meetup</h3>
+                <p class="no-text-transform">This is a safe secondary location close to your home where your group will meetup or evacuate to if you you can't shelter in place and must leave your home. </p>
               </div>
             </div>
+            
             <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :base_phone, "", class: 'form-control',  placeholder: 'home phone' %>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-2">             
+                  <%= label_tag :group_name %>
+                  <%= text_field_tag :name, "", class: 'form-control',  placeholder: 'group name' %>
+                </div>
+                <div class="col-md-offset-1 col-md-2">             
+                  <div>
+                    <%= label_tag :home_phone %>
+                    <%= text_field_tag :base_phone, "", class: 'form-control',  placeholder: 'home phone' %>
+                  </div>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :name_of_local_meetup %>
+                  <%= text_field_tag :local_meetup_name, "", class: 'form-control',  placeholder: 'location name' %>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_zip_code %>
-                <%= text_field_tag :base_zip, "", class: 'form-control',  placeholder: 'zip code' %>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :home_address %>
+                  <%= text_field_tag :home_address, "", class: 'form-control',  placeholder: 'home address' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :local_meetup_address %>
+                  <%= text_field_tag :local_address, "", class: 'form-control',  placeholder: 'local meetup address' %>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <%= label_tag :local_meetup_location %>
-                <%= text_field_tag :local_meetup, "", class: 'form-control',  placeholder: 'home phone' %>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :city %>
+                  <%= text_field_tag :home_city, "", class: 'form-control',  placeholder: 'city' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :city %>
+                  <%= text_field_tag :local_city, "", class: 'form-control',  placeholder: 'city' %>
+                </div>
+              </div>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :state %>
+                  <%= text_field_tag :home_state, "", class: 'form-control',  placeholder: 'state' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :state %>
+                  <%= text_field_tag :local_state, "", class: 'form-control',  placeholder: 'state' %>
+                </div>
+              </div>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :zip %>
+                  <%= text_field_tag :home_zip, "", class: 'form-control',  placeholder: 'zip' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :zip %>
+                  <%= text_field_tag :local_zip, "", class: 'form-control',  placeholder: 'zip' %>
+                </div>
+              </div>
+
+            </div>  <!-- end form group -->
+
+            <div class="row ws-m no-padding">
+              <div class="col-md-5">             
+                <h3 class="form-header">3.&nbsp;&nbsp;Crisis Contact</h3>
+                <p class="no-text-transform">A crisis contact is someone outside your group who lives remotely.  This should be the primary and central contact for your group during a crisis.</p>
+              </div>
+              <div class="col-md-offset-2 col-md-5">             
+                <h3 class="form-header">4.&nbsp;&nbsp;Remote Meetup</h3>
+                <p class="no-text-transform">This is a safe remote location outside your local area where your group will meetup or evacuate to if you can't shelter in place and must leave your local area. </p>
               </div>
             </div>
 
             <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :local_zip, "", class: 'form-control',  placeholder: 'home phone' %>
-              </div>
-            </div>
 
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :remote_meetup, "", class: 'form-control',  placeholder: 'home phone' %>
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :first_name %>
+                  <%= text_field_tag :crisis_contact_first_name, "", class: 'form-control',  placeholder: 'first name' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :remote_location_name %>
+                  <%= text_field_tag :remote_meetup_name, "", class: 'form-control',  placeholder: 'location name' %>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :remote_zip, "", class: 'form-control',  placeholder: 'home phone' %>
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :last_name %>
+                  <%= text_field_tag :crisis_contact_last_name, "", class: 'form-control',  placeholder: 'last name' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :remote_meetup_address %>
+                  <%= text_field_tag :remote_address, "", class: 'form-control',  placeholder: 'remote meetup address' %>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :crisis_contact_first_name, "", class: 'form-control',  placeholder: 'home phone' %>
+              <div class="row ws-m no-padding">
+                <div class="col-md-2">             
+                  <%= label_tag :home_phone %>
+                  <%= text_field_tag :cc_home_phone, "", class: 'form-control',  placeholder: 'home phone' %>
+                </div>
+                <div class="col-md-offset-1 col-md-2">             
+                  <%= label_tag :cell_phone %>
+                  <%= text_field_tag :cc_cell_phone, "", class: 'form-control',  placeholder: 'cell phone' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :city %>
+                  <%= text_field_tag :remote_city, "", class: 'form-control',  placeholder: 'city' %>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :crisis_contact_last_name, "", class: 'form-control',  placeholder: 'home phone' %>
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :email %>
+                  <%= text_field_tag :cc_email, "", class: 'form-control',  placeholder: 'contact email' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :state %>
+                  <%= text_field_tag :remote_state, "", class: 'form-control',  placeholder: 'state' %>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :cc_home_phone, "", class: 'form-control',  placeholder: 'home phone' %>
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :zip %>
+                  <%= text_field_tag :cc_zip, "", class: 'form-control',  placeholder: 'contact loction zip code' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :zip %>
+                  <%= text_field_tag :local_zip, "", class: 'form-control',  placeholder: 'zip' %>
+                </div>              
               </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :cc_cell_phone, "", class: 'form-control',  placeholder: 'home phone' %>
-              </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :cc_email, "", class: 'form-control',  placeholder: 'home phone' %>
-              </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :cc_zip, "", class: 'form-control',  placeholder: 'home phone' %>
-              </div>
-            </div>
-            <div class="form-group">
-              <div>
-                <%= label_tag :home_phone_number %>
-                <%= text_field_tag :crisis_contact_last_name, "", class: 'form-control',  placeholder: 'home phone' %>
-              </div>
-            </div>
 
-            <%= submit_tag "Create My Family", class: 'btn' %>
+            </div>  <!-- end form group -->            
+
+            <%= submit_tag "Create My Group", class: 'btn' %>
+
           <% end %>
-
         </div><!-- / .form-content -->
       </div><!-- / .form-wrapper -->            
     
