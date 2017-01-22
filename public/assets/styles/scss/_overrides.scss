@@ -5,6 +5,7 @@
   letter-spacing: 4px;
   color: #fff;
   display: inline;
+  float:right;  
 }
 .mysubhdr {
   margin: 10px 0px 0px 20px;
@@ -14,6 +15,7 @@
   font-weight: 300;
   color: #777;
   display: inline;  
+  float:right;  
 }
 .pt-custom {
   padding-top: 20px;
@@ -39,4 +41,7 @@
 }
 .pad1 {
   padding: 20px 0 px 20px 0px;
+}
+.info {
+  font-size: 1.2em;
 }

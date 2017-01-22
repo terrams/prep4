@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       # flash[:success] = 'Successfully logged in!'
       group = Group.find_by(user_id: current_user.id)
-      redirect_to "/groups/#{group.id}"
+      if group
+        redirect_to "/groups/#{group.id}"
+      else 
+        redirect_to "/groups/new"
+      end  
     else
       # flash[:warning] = 'Invalid email or password!'
       redirect_to '/login'
@@ -20,7 +24,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     # flash[:success] = 'Successfully logged out!'
-    redirect_to '/login'
+    redirect_to '/'
   end
 
 end

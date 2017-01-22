@@ -76,14 +76,13 @@
                 <% if (current_user) %>                 
                   <!-- Link -->
                   <li class="dropdown mega-fw">
-                    <a href="/logout" aria-expanded="false">Logout<span class="caret"></span></a>
+                    <a href="/logout" aria-expanded="false">Logout</a>
                   </li><!-- / Link -->
-               
+                <% else %>
                   <!-- Link -->
                   <li class="dropdown mega-fw">
-                    <a href="/login" aria-expanded="false">Logout<span class="caret"></span></a>
+                    <a href="/login" aria-expanded="false">Login</a>
                   </li><!-- / Link -->
-                  
                 <% end %>                 
               </ul><!-- / .nav .navbar-nav .navbar-right -->
             </div><!--/.navbar-collapse -->
