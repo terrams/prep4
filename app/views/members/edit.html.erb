@@ -1,50 +1,104 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <div>
-      <h1>Edit member</h1>
-      <%= form_tag "/members/#{@member.id}", method: :patch do %>
-        <div>
-          <%= label_tag :first_name %>
-          <%= text_field_tag :first_name, @member.first_name %>
+<!-- ========== Page Title ========== -->
+<section>
+  <header class="pt-custom pt-dark">
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-sm-3 pad1">
+          <div style="float:left">
+            <a href="/logout"><img src="../../logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+          </div>
         </div>
-        <div>
-          <%= label_tag :last_name %>
-          <%= text_field_tag :last_name, @member.last_name %>
+        <div class="col-sm-9 pad1">
+          <div class="myheader pad1">Edit Member</div>
         </div>
-        <div>
-          <%= label_tag :member_type %>
-          <%= text_field_tag :member_type, @member.member_type %>
-        </div>
-        <div>
-          <%= label_tag :gender %>
-          <%= text_field_tag :gender, @member.gender %>
-        </div>
-        <div>
-          <%= label_tag :active %>
-          <%= text_field_tag :active, @member.active %>
-        </div>
-        <div>
-          <%= label_tag :work_phone %>
-          <%= text_field_tag :work_phone, @member.work_phone %>
-        </div>
-        <div>
-          <%= label_tag :cell_phone %>
-          <%= text_field_tag :cell_phone, @member.cell_phone %>
-        </div>
-        <div>
-          <%= label_tag :email %>
-          <%= text_field_tag :email, @member.email %>
-        </div>
-        <div>
-          <%= label_tag :photo %>
-          <%= text_field_tag :photo, @member.photo %>
-        </div>
-        <div>
-          <%= label_tag :special_needs %>
-          <%= text_field_tag :special_needs, @member.special_needs %>
-        </div>
-         <%= submit_tag "Update member" %>
-      <% end %>
+
+      </div>
     </div>
-  </div>
-</div>
+  </header>
+</section>
+
+<!-- ========== Login Form ========== -->
+ 
+<div class="container">
+
+  <section class="container section min-padding">
+    <header class="no-padding" style="text-align:center">
+      <h2>Member Details</h2>
+    </header>
+  </section>
+
+
+  <div class="row ws-m no-padding">
+    <div class="col-md-offset-1 col-md-11">
+
+      <div class="form-wrapper">
+        <div class="form-content">
+          <%= form_tag "/members/#{@member.id}", method: :patch do  %>
+
+            <div class="form-group">
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :first_name %>
+                  <%= text_field_tag :first_name, @member.first_name, class: 'form-control',  placeholder: 'first name' %>
+
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :email %>
+                  <%= text_field_tag :email, @member.email, class: 'form-control',  placeholder: 'email' %>
+                </div>
+              </div>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :last_name %>
+                  <%= text_field_tag :last_name, @member.last_name, class: 'form-control',  placeholder: 'last name' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :photo %>
+                  <%= text_field_tag :photo, @member.photo, class: 'form-control',  placeholder: 'photo file name' %>
+                </div>
+              </div>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :work_phone %>
+                  <%= text_field_tag :work_phone, @member.work_phone, class: 'form-control',  placeholder: 'work phone' %>
+                </div>
+                <div class="col-md-offset-2 col-md-5">             
+                  <%= label_tag :special_needs %>
+                  <%= text_field_tag :special_needs, @member.special_needs, class: 'form-control',  placeholder: 'special needs' %>
+                </div>
+              </div>
+
+              <div class="row ws-m no-padding">
+                <div class="col-md-5">             
+                  <%= label_tag :cell_phone %>
+                  <%= text_field_tag :cell_phone, @member.cell_phone, class: 'form-control',  placeholder: 'cell phone' %>
+                </div>
+                <div class="col-md-offset-2 col-md-1">             
+                  <br><%= label_tag :gender %>
+                  <%= select_tag :gender, options_for_select([ "Male", "Female" ], @member.gender ) %>
+                </div>
+                <div class="col-md-offset-1 col-md-1">             
+                  <br><%= label_tag :active %>
+                  <%= select_tag :actve, options_for_select([ true, false ], @member.active) %>
+                </div>                
+                <div class="col-md-offset-1 col-md-1">             
+                  <br><%= label_tag :type %>
+                  <%= select_tag :member_type, options_for_select([ "adult", "child", "senior", "pet",], @member.member_type) %>
+                </div>                
+              </div>
+            </div>  <!-- end form group -->          
+
+            <%= submit_tag "submit", class: 'btn' %>
+
+          <% end %>
+        </div><!-- / .form-content -->
+      </div><!-- / .form-wrapper -->            
+    
+    </div><!-- / .col-md-6 -->
+  </div><!-- / .row -->
+</div><!-- / .container -->
+

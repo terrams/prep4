@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122043440) do
+ActiveRecord::Schema.define(version: 20170123170151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,21 @@ ActiveRecord::Schema.define(version: 20170122043440) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "user_id"
+    t.string   "base_addr1"
+    t.string   "base_city"
+    t.string   "base_state"
+    t.string   "base_zip"
+    t.string   "base_name"
+    t.string   "local_addr1"
+    t.string   "local_city"
+    t.string   "local_state"
+    t.string   "local_zip"
+    t.string   "local_name"
+    t.string   "remote_addr1"
+    t.string   "remote_city"
+    t.string   "remote_state"
+    t.string   "remote_zip"
+    t.string   "remote_name"
   end
 
   create_table "member_resources", force: :cascade do |t|

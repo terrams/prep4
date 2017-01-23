@@ -18,37 +18,22 @@ class GroupsController < ApplicationController
       cc_cell_phone: params[:cc_cell_phone],
       cc_email: params[:cc_email],
       cc_zip: params[:cc_zip],
-      user_id: current_user.id
-    )
-
-    @home_address = Address.create(
-      addr1: params[:home_address],
-      city: params[:home_city],
-      state: params[:home_state],
-      zip: params[:home_zip],
-      loc_type: 'home',
-      group_id: @group.id,
-      location_name: 'Home Base'
-    )
-
-    @local_address = Address.create(
-      addr1: params[:local_address],
-      city: params[:local_city],
-      state: params[:local_state],
-      zip: params[:local_zip],
-      loc_type: 'local',
-      group_id: @group.id,
-      location_name: params[:local_meetup_name]
-    )
-
-     @remote_address = Address.create(
-      addr1: params[:remote_address],
-      city: params[:remote_city],
-      state: params[:remote_state],
-      zip: params[:remote_zip],
-      loc_type: 'remote',
-      group_id: @group.id,
-      location_name: params[:remote_meetup_name]
+      user_id: current_user.id,
+      base_addr1: params[:home_address],
+      base_city: params[:home_city],
+      base_state: params[:home_state],
+      base_zip: params[:home_zip],
+      base_name: 'Home Base',
+      local_addr1: params[:local_address],
+      local_city: params[:local_city],
+      local_state: params[:local_state],
+      local_zip: params[:local_zip],
+      local_name: params[:local_meetup_name],
+      remote_addr1: params[:remote_address],
+      remote_city: params[:remote_city],
+      remote_state: params[:remote_state],
+      remote_zip: params[:remote_zip],
+      remote_name: params[:remote_meetup_name]
     )
 
     redirect_to "/groups/#{@group.id}"
@@ -56,10 +41,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find_by(id: params[:id])
-    @members = Member.where(group_id: params[:id])
-    @home_address = Address.where(group_id: params[:id], loc_type: "home")
-    @local_address = Address.where(group_id: params[:id], loc_type: "local")
-    @remote_address = Address.where(group_id: params[:id], loc_type: "remote")
     render 'show.html.erb'    
   end
 
@@ -86,6 +67,20 @@ class GroupsController < ApplicationController
     @group.cc_email = params[:cc_email]
     @group.cc_zip = params[:cc_zip]
     @group.user_id = current_user.id
+    @group.base_addr1 = params[:home_address]
+    @group.base_city = params[:home_city]
+    @group.base_state = params[:home_state]
+    @group.base_zip = params[:home_zip]
+    @group.local_addr1 = params[:local_address]
+    @group.local_city = params[:local_city]
+    @group.local_state = params[:local_state]
+    @group.local_zip = params[:local_zip]
+    @group.local_name = params[:local_meetup_name]
+    @group.remote_addr1 = params[:remote_address]
+    @group.remote_city = params[:remote_city]
+    @group.remote_state = params[:remote_state]
+    @group.remote_zip = params[:remote_zip]
+    @group.remote_name = params[:remote_meetup_name]
     @group.save
     flash[:success] = "Group Updated"
     redirect_to "/groups/#{@group.id}"

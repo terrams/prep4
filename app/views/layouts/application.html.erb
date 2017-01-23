@@ -25,10 +25,10 @@
 
 
         <!-- Definity CSS -->
-        <link rel="stylesheet" href="/assets/styles/app.css">        
+        <link rel="stylesheet" href="/assets/styles/xapp.css">        
         <link rel="stylesheet" href="/assets/styles/main.css">
         <link rel="stylesheet" href="/assets/styles/responsive.css">
-        <link rel="stylesheet" href="/assets/styles/app.css">
+        <link rel="stylesheet" href="/assets/styles/xapp.css">
 
         <!-- JS -->
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -77,6 +77,15 @@
                   <!-- Link -->
                   <li class="dropdown mega-fw">
                     <a href="/logout" aria-expanded="false">Logout</a>
+                  </li><!-- / Link -->
+                  <li class="dropdown mega-fw">
+                    <a href="/groups/#{current_user.group.group_id}" aria-expanded="false">Group</a>
+                  </li><!-- / Link -->
+                  <li class="dropdown mega-fw">
+                    <a href="/members" aria-expanded="false">Members</a>
+                  </li><!-- / Link -->
+                  <li class="dropdown mega-fw">
+                    <a href="/resources" aria-expanded="false">Resources</a>
                   </li><!-- / Link -->
                 <% else %>
                   <!-- Link -->

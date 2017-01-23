@@ -2,7 +2,7 @@ class MembersController < ApplicationController
 
   def index
     group =Group.find_by(user_id: current_user.id)
-    @members = Member.find_by(group_id: group.id)
+    @members = Member.where(group_id: group.id)
     render 'index.html.erb'
   end
 
@@ -61,7 +61,7 @@ class MembersController < ApplicationController
     group_id = @member.group_id
     @member.destroy
     flash[:warning] = "Member Destroyed"
-    redirect_to "/groups/#{group_id}"    
+    redirect_to "/members"    
   end
 
 end

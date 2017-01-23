@@ -40,10 +40,10 @@
             <div><b>Zip:</b></div>
           </div>
           <div class="col-md-9">
-            <div>@local_address.addr1</div>
-            <div>@local_address.city</div>
-            <div>@local_address.state</div>
-            <div>@local_address.zip</div>
+            <div><%= @group.base_addr1 %></div>
+            <div><%= @group.base_city %></div>
+            <div><%= @group.base_state %></div>
+            <div><%= @group.base_zip %></div>
           </div>
         </div>
         <div class="row ws-s no-padding">
@@ -51,7 +51,7 @@
             <div><b>Members:</b></div>
           </div>
           <div class="col-md-9">
-            <div>@group.members.count</div>
+            <div><%= @group.members.count %></div>
           </div>
         </div>
         <br><br>
@@ -78,9 +78,7 @@
           </div>
           <div id="faq-2-collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-2-h-1">
             <div class="panel-body">
-            <h5>Home Base Weather</h5>
-            <h5>Local Meetup Weather</h5>
-            <h5>Renote Meetup Weather Conditions</h5>
+            <h5>Stuff goes here</h5>
             </div>
           </div>
         </div><!-- / .panel -->
@@ -97,7 +95,7 @@
             <div class="panel-body">
               <div class="row ws-s no-padding">
                 <div class="col-md-12">
-                  <h5>@local_address.location_name</h5>
+                  <h5><%= @group.local_name %></h5>
                 </div>
               </div>
               <div class="row ws-s no-padding">
@@ -108,10 +106,10 @@
                   <div><b>Zip:</b></div>
                 </div>
                 <div class="col-md-9">
-                  <div>@local_address.addr1</div>
-                  <div>@local_address.city</div>
-                  <div>@local_address.state</div>
-                  <div>@local_address.zip</div>
+                  <div><%= @group.local_addr1 %></div>
+                  <div><%= @group.local_city %></div>
+                  <div><%= @group.local_state %></div>
+                  <div><%= @group.local_zip %></div>
                 </div>
               </div>
             </div>
@@ -130,7 +128,7 @@
            <div class="panel-body">
               <div class="row ws-s no-padding">
                 <div class="col-md-12">
-                  <h5>@remote_address.location_name</h5>
+                  <h5><%= @group.remote_name %></h5>
                 </div>
               </div>
               <div class="row ws-s no-padding">
@@ -141,10 +139,10 @@
                   <div><b>Zip:</b></div>
                 </div>
                 <div class="col-md-9">
-                  <div>@remote_address.addr1</div>
-                  <div>@remote_address.city</div>
-                  <div>@remote_address.state</div>
-                  <div>@remote_address.zip</div>
+                  <div><%= @group.remote_addr1 %></div>
+                  <div><%= @group.remote_city %></div>
+                  <div><%= @group.remote_state %></div>
+                  <div><%= @group.remote_zip %></div>
                 </div>
               </div>
             </div>
@@ -190,54 +188,15 @@
   </div><!-- / .row -->
 </section><!-- / .container -->
 
-  <!-- ========== Members - 4 columns ========== -->
-  <section class="container section team-4col no-padding">
-    <div class="row no-padding">
-      
-      <header class="sec-heading no-padding">
-        <h2>Members</h2>
-      </header>
+<section class="container section no-padding">
+  <header class="no-padding" style="text-align:right">
+    <h4><span class="blue1">
+    <% if @group.members.count == 0 %>
+      <a href="/members/new">Manage Members</a></span></h4>
+    <% else %>
+      <a href="/members">Manage Members</a></span></h4>
+    <% end %>
+  </header>
+</section>
 
-      <!-- Member Loop-->
-      <% @members.in_groups_of(4) do |member| %>
-        <div class="col-lg-3 col-md-6 mb-sm-50">
-          <div class="t-item">
 
-            <!-- Image -->
-            <div class="t-image">
-              <img src="member.photo" alt="Team Member" class="img-responsive">
-              <div class="t-description">
-                <div class="content-wrapper">
-                  <h4 class="h-alt">
-                  <%= member.first_name %> <%= member.last_name %></h4>
-                  <p><%= member.member_type %><br>
-                  <%= member.gender %>
-                  <%= member.active %>
-                  <%= member.work_phone %>
-                  <%= member.cell_phone %>
-                  <%= member.email %>
-                  <%= member.special_needs %></p>
-                 </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Info -->
-            <div class="t-info">
-              <h4 class="t-name"><%= member.first_name %> <%= member.last_name %></h4>
-              <% if !(member.active) %>
-                <span class="t-role">Inactive</span>
-              <% end %>
-              <ul class="social-links">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              </ul>
-            </div>
-
-          </div><!-- / .t-item -->
-        </div><!-- / .col-lg-3 -->
-      <% end %>
-
-      </div><!-- / .row -->
-    </section><!-- / .contianer -->
-  </div><!-- / .gray-bg -->

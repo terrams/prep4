@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
             
-
   get '/groups' => 'groups#index'               # stub, not used
   get '/groups/new' => 'groups#new'             # renders if no group - from login or signup
   post '/groups' => 'groups#create'             
@@ -17,20 +16,11 @@ Rails.application.routes.draw do
   patch '/members/:id' => 'members#update'
   delete '/members/:id' => 'members#destroy'
 
-  # get '/products' => 'products#index'
-  # get '/products/new' => 'products#new'
-  # post '/products' => 'products#create'
-  # get '/products/:id' => 'products#show'
-  # get '/products/:id/edit' => 'products#edit'
-  # patch '/products/:id' => 'products#update'
-  # delete '/products/:id' => 'products#destroy'
+  get '/resources' => 'resources#index'
+  # get '/resources/:id' => 'resources#show'           
 
-  # get '/products/new' => 'products#new'
-  # post '/products' => 'products#create'
-  # get '/products/:id' => 'products#show'
-  # get '/products/:id/edit' => 'products#edit'
-  # patch '/products/:id' => 'products#update'
-  # delete '/products/:id' => 'products#destroy' 
+  get '/scenarios' => 'scenarios#index'
+  get '/scenarios/:id' => 'scenarios#show"'
 
   get '/' => 'users#landing'
   get  '/signup' => 'users#new'
