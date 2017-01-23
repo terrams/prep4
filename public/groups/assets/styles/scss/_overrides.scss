@@ -1,0 +1,47 @@
+.myheader {
+  font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  margin: 30px 0px 0px 20px;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #fff;
+  display: inline;
+  float:right;  
+}
+.mysubhdr {
+  margin: 10px 0px 0px 20px;
+  font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-weight: 300;
+  color: #777;
+  display: inline;  
+  float:right;  
+}
+.pt-custom {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  padding: 0;
+} 
+.pt-custom .breadcrumb {
+  padding: 10;
+}
+.pt-custom-dark {
+  background: #111111;
+  color: #ececec;
+}
+.pt-custom-dark .breadcrumb li a:hover {
+  color: #ececec;
+}
+ .pt-custom-dark .breadcrumb .active {
+  color: #777;
+}
+ .pt-custom-dark .breadcrumb li a {
+  color: #999;
+}
+.pad1 {
+  padding: 20px 0 px 20px 0px;
+}
+.info {
+  font-size: 1.2em;
+}

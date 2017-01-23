@@ -17,3 +17,251 @@
 
 <%= link_to "Edit", "/members/#{@member.id}/edit", class: "btn btn-success" %>
 <%= link_to "Delete", "/members/#{@member.id}", {method: :delete, class: "btn btn-danger" }%>
+
+
+
+
+
+<!-- ========== Page Title ========== -->
+<section>
+  <header class="pt-custom pt-dark">
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-sm-3 pad1">
+          <div style="float:left">
+            <a href="/logout"><img src="../assets/images/logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="myheader"></div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+</section>
+
+
+<!-- ========== Page Content ========== -->
+<section class="container section min-padding">
+  <header class="no-padding" style="text-align:center">
+    <h2><%= @group.name %></h2>
+  </header>
+</section>
+
+<section class="container section no-padding">
+  <div class="row ws-s no-padding">
+    <!-- Section 1 -->
+    <div class="col-md-6">
+      <div class="faq-group-header ws-s">
+        <h4 class="mb-30">Home Base</h4>
+        <div class="row ws-s no-padding">
+          <div class="col-md-3">
+            <div><b>Address:</b></div>
+            <div><b>City:</b></div>
+            <div><b>State:</b></div>
+            <div><b>Zip:</b></div>
+          </div>
+          <div class="col-md-9">
+            <div>@local_address.addr1</div>
+            <div>@local_address.city</div>
+            <div>@local_address.state</div>
+            <div>@local_address.zip</div>
+          </div>
+        </div>
+        <div class="row ws-s no-padding">
+          <div class="col-md-3">
+            <div><b>Members:</b></div>
+          </div>
+          <div class="col-md-9">
+            <div>@group.members.count</div>
+          </div>
+        </div>
+        <br><br>
+        <%= link_to "Edit Group", "/groups/#{@group.id}/edit", class: "btn btn-success" %>
+        <%= link_to "Delete Group", "/groups/#{@group.id}", {method: :delete, class: "btn btn-danger" }%>
+      </div>
+    </div><!-- / .col-md-6 --
+
+    <!-- Section 2 -->
+    <div class="col-md-6">
+ <!--      <div class="faq-group-header ws-s no-padding">
+        <h4 class="mb-30">Questions Group 2</h4>
+      </div>
+  -->     <!-- Accordion -->
+      <div class="panel-group ws-s accordions-1" id="faq-accordion-2" role="tablist" aria-multiselectable="true">
+        <!-- Item 1 -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="faq-2-h-1">
+            <h4 class="panel-title">
+              <span class="collapsed" role="button" data-toggle="collapse" data-parent="#faq-accordion-2" href="#faq-2-collapse-1" aria-expanded="false" aria-controls="faq-2-collapse-1">
+                Current Weather Conditions
+              </span>
+            </h4>
+          </div>
+          <div id="faq-2-collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-2-h-1">
+            <div class="panel-body">
+            <h5>Home Base Weather</h5>
+            <h5>Local Meetup Weather</h5>
+            <h5>Renote Meetup Weather Conditions</h5>
+            </div>
+          </div>
+        </div><!-- / .panel -->
+
+        <!-- Item 2 -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="faq-2-h-2">
+            <h4 class="panel-title">
+              <span class="collapsed" role="button" data-toggle="collapse" data-parent="#faq-accordion-2" href="#faq-2-collapse-2" aria-expanded="false" aria-controls="faq-2-collapse-2">Local Meetup
+              </span>
+            </h4>
+          </div>
+          <div id="faq-2-collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-2-h-2">
+            <div class="panel-body">
+              <div class="row ws-s no-padding">
+                <div class="col-md-12">
+                  <h5>@local_address.location_name</h5>
+                </div>
+              </div>
+              <div class="row ws-s no-padding">
+                <div class="col-md-3">
+                  <div><b>Address:</b></div>
+                  <div><b>City:</b></div>
+                  <div><b>State:</b></div>
+                  <div><b>Zip:</b></div>
+                </div>
+                <div class="col-md-9">
+                  <div>@local_address.addr1</div>
+                  <div>@local_address.city</div>
+                  <div>@local_address.state</div>
+                  <div>@local_address.zip</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- / .panel -->
+
+        <!-- Item 3 -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="faq-2-h-3">
+            <h4 class="panel-title">
+              <span class="collapsed" role="button" data-toggle="collapse" data-parent="#faq-accordion-2" href="#faq-2-collapse-3" aria-expanded="false" aria-controls="faq-2-collapse-3">Remote Meetup
+              </span>
+            </h4>
+          </div>
+          <div id="faq-2-collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-2-h-3">
+           <div class="panel-body">
+              <div class="row ws-s no-padding">
+                <div class="col-md-12">
+                  <h5>@remote_address.location_name</h5>
+                </div>
+              </div>
+              <div class="row ws-s no-padding">
+                <div class="col-md-3">
+                  <div><b>Address:</b></div>
+                  <div><b>City:</b></div>
+                  <div><b>State:</b></div>
+                  <div><b>Zip:</b></div>
+                </div>
+                <div class="col-md-9">
+                  <div>@remote_address.addr1</div>
+                  <div>@remote_address.city</div>
+                  <div>@remote_address.state</div>
+                  <div>@remote_address.zip</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- / .panel -->
+
+        <!-- Item 4 -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="faq-2-h-4">
+            <h4 class="panel-title">
+              <span class="collapsed" role="button" data-toggle="collapse" data-parent="#faq-accordion-2" href="#faq-2-collapse-4" aria-expanded="false" aria-controls="faq-2-collapse-2">Crisis Contact
+              </span>
+            </h4>
+          </div>
+          <div id="faq-2-collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-2-h-4">
+            <div class="panel-body">
+              <div class="row ws-s no-padding">
+                <div class="col-md-12">
+                  <h5><%= @group.crisis_contact_first_name.capitalize %>&nbsp;
+                  <%= @group.crisis_contact_last_name.capitalize %></h5>
+                 </div>
+              </div>
+              <div class="row ws-s no-padding">
+                <div class="col-md-3">
+                  <div><b>Home:</b></div>
+                  <div><b>Cell:</b></div>
+                  <div><b>Email:</b></div>
+                  <div><b>Zip Code:</b></div>
+                </div>
+                <div class="col-md-9">
+                  <div><%= @group.cc_home_phone %></div>
+                  <div><%= @group.cc_cell_phone %></div>
+                  <div><%= @group.cc_email %></div>
+                  <div><%= @group.cc_zip %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- / .panel -->
+      </div><!-- / .panel-group .accordion-1 -->
+    </div><!-- / .col-md-6 -->
+  </div><!-- / .row -->
+</section><!-- / .container -->
+
+  <!-- ========== Members - 4 columns ========== -->
+  <section class="container section team-4col no-padding">
+    <div class="row no-padding">
+      
+      <header class="sec-heading no-padding">
+        <h2>Members</h2>
+      </header>
+
+      <!-- Member Loop-->
+      <% @members.in_groups_of(4) do |member| %>
+        <div class="col-lg-3 col-md-6 mb-sm-50">
+          <div class="t-item">
+
+            <!-- Image -->
+            <div class="t-image">
+              <img src="member.photo" alt="Team Member" class="img-responsive">
+              <div class="t-description">
+                <div class="content-wrapper">
+                  <h4 class="h-alt">
+                  <%= member.first_name %> <%= member.last_name %></h4>
+                  <p><%= member.member_type %><br>
+                  <%= member.gender %>
+                  <%= member.active %>
+                  <%= member.work_phone %>
+                  <%= member.cell_phone %>
+                  <%= member.email %>
+                  <%= member.special_needs %></p>
+                 </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Info -->
+            <div class="t-info">
+              <h4 class="t-name"><%= member.first_name %> <%= member.last_name %></h4>
+              <% if !(member.active) %>
+                <span class="t-role">Inactive</span>
+              <% end %>
+              <ul class="social-links">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
+
+          </div><!-- / .t-item -->
+        </div><!-- / .col-lg-3 -->
+      <% end %>
+
+      </div><!-- / .row -->
+    </section><!-- / .contianer -->
+  </div><!-- / .gray-bg -->

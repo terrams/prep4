@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122012129) do
+ActiveRecord::Schema.define(version: 20170122043440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,7 @@ ActiveRecord::Schema.define(version: 20170122012129) do
     t.string   "photo"
     t.string   "icon"
     t.string   "local_meetup"
-    t.string   "local_zip"
     t.string   "remote_meetup"
-    t.string   "remote_zip"
     t.string   "crisis_contact_first_name"
     t.string   "crisis_contact_last_name"
     t.string   "cc_home_phone"
