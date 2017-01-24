@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :groups
+  has_one :group
   
 end

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete '/members/:id' => 'members#destroy'
 
   get '/resources' => 'resources#index'
-  # get '/resources/:id' => 'resources#show'           
+  get '/resources/:id' => 'resources#show'           
 
   get '/scenarios' => 'scenarios#index'
   get '/scenarios/:id' => 'scenarios#show"'
@@ -28,6 +28,6 @@ Rails.application.routes.draw do
 
   get  '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get  '/logout' => 'sessions#destroy' 
+  delete  '/logout' => 'sessions#destroy' 
 
 end

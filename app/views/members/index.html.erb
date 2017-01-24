@@ -28,53 +28,52 @@
         <h2>Group Members <%= @members.count %></h2>
       </header>
 
-      <% @members.in_groups_of(4) do |row| %>
-        <% for member in row %>
-          <!-- Member 1 -->
-          <div class="col-lg-3 col-md-6 mb-sm-50">
-            <div class="t-item">
+      <% @members.each do |member| %>
 
-              <!-- Image -->
-              <div class="t-image">
-                <img src="http://placehold.it/360x440" alt="Team Member" class="img-responsive">
-                <div class="t-description">
-                  <div class="content-wrapper">
-                    <div class="row no-padding">
+        <div class="col-lg-3 col-md-6 mb-sm-50">
+          <div class="t-item">
 
-<!--                       <div class="col-md-3">
-                        <div><b>First Name:</b></div>
-                        <div><b>Last Name:</b></div>
-                        <div><b>Type:</b></div>
-                        <div><b>Gender:</b></div>
-                        <div><b>Active:</b></div>
-                        <div><b>Special Needs:</b></div>        
-                      </div>
-                      <div class="col-md-9">
-                        <div><%= member.first_name %></div>
-                        <div><%= member.last_name %></div>
-                        <div><%= member.member_type %></div>
-                        <div><%= member.gender %></div>
-                        <div><%= member.active %></div>
-                        <div><%= member.special_needs %></div>
-                      </div>
- -->
+            <!-- Image -->
+            <div class="t-image">
+              <img src="http://placehold.it/360x440" alt="Team Member" class="img-responsive">
+              <div class="t-description">
+                <div class="content-wrapper">
+                  <div class="row no-padding">
+
+                    <div class="col-md-3">
+                      <div><b>First Name:</b></div>
+                      <div><b>Last Name:</b></div>
+                      <div><b>Type:</b></div>
+                      <div><b>Gender:</b></div>
+                      <div><b>Active:</b></div>
+                      <div><b>Special Needs:</b></div>        
                     </div>
+                    <div class="col-md-9">
+                      <div><%= member.first_name %></div>
+                      <div><%= member.last_name %></div>
+                      <div><%= member.member_type %></div>
+                      <div><%= member.gender %></div>
+                      <div><%= member.active %></div>
+                      <div><%= member.special_needs %></div>
+                    </div>
+
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- Info -->
-              <div class="t-info">
-                <h4 class="t-name"><%= member.first_name %> <%= member.last_name %></h4>
-                 <ul class="social-links">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-              </div>
+            <!-- Info -->
+            <div class="t-info">
+              <h4 class="t-name"><%= member.first_name %> <%= member.last_name %></h4>
+               <ul class="social-links">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
 
-            </div><!-- / .t-item -->
-          </div><!-- / .col-lg-3 -->
-        <% end %>
+          </div><!-- / .t-item -->
+        </div>
+
       <% end %>
 
     </div><!-- / .row -->

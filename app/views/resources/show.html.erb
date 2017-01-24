@@ -1,1 +1,84 @@
-this is fucked up
+<!-- ========== Page Title ========== -->
+<section>
+  <header class="pt-custom pt-dark">
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-sm-3 pad1">
+          <div style="float:left">
+            <a href="/logout"><img src="../logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="myheader"></div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+</section>
+
+<!-- ========== Page Content ========== -->
+<section class="container section min-padding">
+  <header class="no-padding" style="text-align:center">
+    <h2>@resource.category</h2>
+  </header>
+</section>
+
+<section>
+  <div class="row ws-s no-padding">
+    <div class="col-md-offset-1 col-md-3">
+      <img src="../shattered.gif" height=r"300px" width="175px">
+    </div>
+    <div class="col-md-8">
+      <div class="row ws-s no-padding">
+        <div class="col-md-12">
+          <h5>General Information</h5>
+        </div>
+      </div>
+      <div class="row ws-s no-padding">
+        <div class="col-md-3">
+          <div><b>Description:</b></div>
+          <div><b>Required by:</b></div>
+          <div><b>Type:</b></div>
+          <div><b>Gender:</b></div>
+          <div><b>Active:</b></div>
+          <div><b>Special Needs:</b></div>        
+        </div>
+        <div class="col-md-9">
+          <div><%= @member.first_name %></div>
+          <div><%= @member.last_name %></div>
+          <div><%= @member.member_type %></div>
+          <div><%= @member.gender %></div>
+          <div><%= @member.active %></div>
+          <div><%= @member.special_needs %></div>
+        </div>
+      </div>
+      <div class="row ws-s no-padding">
+        <div class="col-md-12">
+          <h5>Contact Information</h5>
+        </div>
+      </div>
+      <div class="row ws-s no-padding">
+        <div class="col-md-3">
+          <div><b>Work Phone:</b></div>
+          <div><b>Cell Phone:</b></div>
+          <div><b>Email:</b></div>
+        </div>
+        <div class="col-md-9">
+          <div><%= @member.work_phone %></div>
+          <div><%= @member.cell_phone %></div>
+          <div><%= @member.email %></div>
+        </div>
+      </div>
+      <div class="row ws-s no-padding">
+        <div class="col-md-12"><br><br>
+          <%= link_to "Edit", "/members/#{@member.id}/edit", class: "btn btn-success" %>
+          <%= link_to "Delete", "/members/#{@member.id}", {method: :delete, class: "btn btn-danger" }%> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

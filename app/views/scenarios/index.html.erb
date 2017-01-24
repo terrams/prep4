@@ -1,0 +1,61 @@
+<!-- ========== Page Title ========== -->
+<section>
+  <header class="pt-custom pt-dark">
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-sm-3 pad1">
+          <div style="float:left">
+            <a href="/logout"><img src="../assets/images/logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+          </div>
+        </div>
+        <div class="col-sm-9 pad1">
+          <div class="myheader pad1">Scenarios</div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+</section>
+
+<!-- ========== Features ========== -->
+
+<div class="gray-bg">
+  <section class="container section ft-boxed-hover style="padding-top:10px; padding-bottom:0px;"">
+    <div class="row" style="padding-top:10px; padding-bottom:0px;">
+
+      <header class="sec-heading" style="padding-top:10px; padding-bottom:0px;">
+        <h2>Disaster Scenarios</h2>
+        <span class="subheading">Familiarize your fmily with these common disaster scenarios and<br>the special resources and information you need to navigate them.</span>
+      </header>
+
+      <div class="col-md-12 no-gap">
+        
+        <ul>
+          <% @scenarios.each do |scenario| %>
+
+            <!-- Item -->
+            <li>
+              <span class="linea-basic-headset ft-icon"></span>
+              <h5><%= scenario.name %></h5>
+              <h6 class="h-alt">Lorem Ipsum Dolor</h6>
+
+              <div class="hover-content">
+                <span class="linea-basic-headset ft-icon"></span>
+                <span class="ft-heading">Chemical</span>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                </p>
+                <a href="#">Learn more</a>
+              </div><!-- / .hover-content -->
+            </li>
+            <!-- end Item -->
+
+          <% end %>  
+        </ul>
+
+      </div>
+
+    </div><!-- / .row -->
+  </section><!-- / .cotnainer -->
+</div><!-- / .gray-bg -->
