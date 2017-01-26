@@ -1,16 +1,22 @@
 <!-- ========== Page Title ========== -->
 <section>
-  <header class="pt-custom pt-dark">
+  <header class="pt-custom pt-dark" style="background-image: url('../hdr-storm.jpg')" >
+ >
     <div class="container">
       <div class="row">
    
-        <div class="col-sm-3 pad1">
+        <div class="col-sm-9 pad1">
           <div style="float:left">
-            <a href="/logout"><img src="../logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+            <a href="/"><img src="../light_logo.png" height="100px" width="170px" alt="Prepper logo"></a>
           </div>
         </div>
-        <div class="col-sm-9">
-          <div class="myheader">Group Members</div>
+        <div class="col-sm-3">
+          <div style="margin: 55px 0px 0px 20px;
+                      font-size: 1em;
+                      letter-spacing: 4px;
+                      color: #fff;
+                      display: inline;
+                      float:right;">Group Members</div>
         </div>
 
       </div>
@@ -21,11 +27,11 @@
 <!-- ========== Team - 4 columns ========== -->
 
 <div class="gray-bg">
-  <section class="container section team-4col">
-    <div class="row">
+  <section class="container section team-4col" style="padding-top:20px; padding-bottom: 50px">
+    <div class="row "no-padding"" style="padding-top:10px; padding-bottom: 10px">
       
       <header class="sec-heading">
-        <h2>Group Members <%= @members.count %></h2>
+        <h2><%= current_user.group.name %><br><small> (<%= @members.count %>) members</small></h2>
       </header>
 
       <% @members.each do |member| %>
@@ -35,28 +41,47 @@
 
             <!-- Image -->
             <div class="t-image">
-              <img src="http://placehold.it/360x440" alt="Team Member" class="img-responsive">
+              <img src="<%= member.photo %>" alt="Team Member" class="img-responsive">
               <div class="t-description">
-                <div class="content-wrapper">
+                <div class="content-wrapper" style="padding:15px;">
                   <div class="row no-padding">
-
-                    <div class="col-md-3">
-                      <div><b>First Name:</b></div>
-                      <div><b>Last Name:</b></div>
-                      <div><b>Type:</b></div>
-                      <div><b>Gender:</b></div>
-                      <div><b>Active:</b></div>
-                      <div><b>Special Needs:</b></div>        
+                    <div class="col-md-12">                    
+                      <h3><%= member.member_type %></h3>
                     </div>
-                    <div class="col-md-9">
-                      <div><%= member.first_name %></div>
-                      <div><%= member.last_name %></div>
-                      <div><%= member.member_type %></div>
-                      <div><%= member.gender %></div>
-                      <div><%= member.active %></div>
-                      <div><%= member.special_needs %></div>
+                  </div>
+                  <div class="row no-padding">
+                    <div class="col-md-6">
+<!--                       <div><h5>Gender:</h5></div>
+ -->                      <div><h5>Active:</h5></div>
+                      <div><h5>Kit:</h5></div>
                     </div>
-
+                    <div class="col-md-6">                    
+<!--                       <div><h5><%= member.gender %></h5></div>
+  -->                     <div><h5>
+                        <% if member.active %>
+                          <span style="color:green">Yes</span>
+                        <% else %>
+                          <span style="color:red">No</span>
+                        <% end %>
+                      </h5></div>
+                      <div><h5>
+                        <% if member.kit %>
+                          <span style="color:green">Yes</span>
+                        <% else %>
+                          <span style="color:red">No</span>
+                        <% end %>
+                      </h5></div>
+                     </div>
+                  </div>
+                  <div class="row" style="padding-top:0px;padding-bottom:0px">
+                    <div class="col-md-12"> 
+                      <div><h5>Special Needs:</h5></div>        
+                    </div>
+                  </div>
+                  <div class="row no-padding">
+                    <div class="col-md-12"> 
+                      <div style="color: red"><%= member.special_needs %></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -64,10 +89,21 @@
 
             <!-- Info -->
             <div class="t-info">
-              <h4 class="t-name"><%= member.first_name %> <%= member.last_name %></h4>
+              <h4 class="t-name">
+                <% if !(member.kit) %>
+                  <span style="color:red"><%= member.first_name %> <%= member.last_name %></span>
+                <% else %>
+                  <%= member.first_name %> <%= member.last_name %>
+                <% end %>
+              </h4>
                <ul class="social-links">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li style="margin-left:100px;"">
+                  <a href="/members/<%= member.id %>">
+                    <small style="color:dodgerblue">View</small>
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -77,5 +113,8 @@
       <% end %>
 
     </div><!-- / .row -->
+    <br><br>
+    <%= link_to "Add Member", "/members/new", class: "btn btn-success" %>
+
   </section><!-- / .container -->
 </div><!-- / .gray-bg -->

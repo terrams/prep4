@@ -1,18 +1,23 @@
 <!-- ========== Page Title ========== -->
 <section>
-  <header class="pt-custom pt-dark">
+  <header class="pt-custom pt-dark" style="background-image: url('../../../hdr-zombie.jpg')" >
     <div class="container">
       <div class="row">
    
-        <div class="col-sm-3 pad1">
+        <div class="col-sm-9 pad1">
           <div style="float:left">
-            <a href="/logout"><img src="../../logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+            <a href="/"><img src="../../logo.png" height="100px" width="170px" alt="Prepper logo"></a>
           </div>
         </div>
-        <div class="col-sm-9 pad1">
-          <div class="myheader pad1">Edit Member</div>
+       <div class="col-sm-3">
+          <div style="margin: 55px 0px 0px 20px;
+                      font-size: 1em;
+                      letter-spacing: 4px;
+                      color: #fff;
+                      display: inline;
+                      float:right;">Edit Member</div>
         </div>
-
+  
       </div>
     </div>
   </header>
@@ -78,6 +83,10 @@
                   <%= text_field_tag :cell_phone, @member.cell_phone, class: 'form-control',  placeholder: 'cell phone' %>
                 </div>
                 <div class="col-md-offset-2 col-md-1">             
+                  <br><%= label_tag :type %>
+                  <%= select_tag :member_type, options_for_select([ "adult", "child", "senior", "pet",], @member.member_type) %>
+                </div>                
+                <div class="col-md-offset-1 col-md-1">             
                   <br><%= label_tag :gender %>
                   <%= select_tag :gender, options_for_select([ "Male", "Female" ], @member.gender ) %>
                 </div>
@@ -85,9 +94,12 @@
                   <br><%= label_tag :active %>
                   <%= select_tag :actve, options_for_select([ true, false ], @member.active) %>
                 </div>                
-                <div class="col-md-offset-1 col-md-1">             
-                  <br><%= label_tag :type %>
-                  <%= select_tag :member_type, options_for_select([ "adult", "child", "senior", "pet",], @member.member_type) %>
+              </div>
+              <div class="row ws-m no-padding">
+                <div class="col-md-offset-7 col-md-5">           
+                  <br><%= label_tag :bugout_kit_complete %>&nbsp;&nbsp;
+
+                  <%= select_tag :kit, options_for_select([ true, false ], @member.kit) %>
                 </div>                
               </div>
             </div>  <!-- end form group -->          

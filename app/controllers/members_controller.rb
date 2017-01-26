@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+    before_action :authenticate_user!
 
   def index
     group =Group.find_by(user_id: current_user.id)

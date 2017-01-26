@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  def landing
+  def landing    
     render 'landing.html.erb'
   end
 

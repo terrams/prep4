@@ -1,11 +1,11 @@
 .myheader {
-  font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
-  margin: 30px 0px 0px 20px;
-  font-size: 22px;
+  font-family: "Open Sans", "Montserrat", "Helvetica Neue", Helvetica  margin: 30px 0px 0px 20px;
+  font-size: 1em;
   letter-spacing: 4px;
   color: #fff;
   display: inline;
-  float:right;
+  float:right;, sans-serif;
+
 }
 .mysubhdr {
   margin: 100px 0px 0px 20px;

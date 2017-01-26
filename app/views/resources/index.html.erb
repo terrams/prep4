@@ -1,16 +1,21 @@
 <!-- ========== Page Title ========== -->
 <section>
-  <header class="pt-custom pt-dark">
+  <header class="pt-custom pt-dark" style="background-image: url('../hdr-storm.jpg')" >>
     <div class="container">
       <div class="row">
    
-        <div class="col-sm-3 pad1">
+        <div class="col-sm-9 pad1">
           <div style="float:left">
-            <a href="/logout"><img src="../assets/images/logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+            <a href="/"><img src="../light_logo.png" height="100px" width="170px" alt="Prepper logo"></a>
           </div>
         </div>
-        <div class="col-sm-9 pad1">
-          <div class="myheader pad1">Resources</div>
+        <div class="col-sm-3">
+          <div style="margin: 55px 0px 0px 20px;
+                      font-size: 1em;
+                      letter-spacing: 4px;
+                      color: #fff;
+                      display: inline;
+                      float:right;">Resources</div>
         </div>
 
       </div>
@@ -20,37 +25,50 @@
 
 <!-- ========== Page ========== -->
  
-<section class="container portfolio-layout portfolio-columns-boxed no-padding">
-  <div class="row no-padding">
-    <header class="sec-heading">
+<section class="container portfolio-layout portfolio-columns-boxed" style="padding-top:0px;padding-bottom:0px;margin-top:20px">
+  <div class="row no-padding" style="padding-top:10px;padding-bottom:0px">
+    <header class="sec-heading" style="padding-top:10px;padding-bottom:0px;margin-bottom:0px">
       <h2>Resources</h2>
-      <span class="subheading">Something I will add later</span>
+      <span class="subheading">View the resources you will need for each member's bugout kit</span>
     </header>
   </div><!-- / .row -->
   
   <!-- Filters -->
-  <div class="row no-padding">
+  <div class="row no-padding" style="padding-top:10px;padding-bottom:20px">
     <ul id="pfolio-filters" class="portfolio-filters">
       <li class="active"><a href="#" data-filter="*">All</a></li>
-      <li><a href="#" data-filter=".webdesing">Bugout Bag</a></li>
-      <li><a href="#" data-filter=".print">Base</a></li>
+      <li><a href="#" data-filter=".senior">Senior</a></li>      
+      <li><a href="#" data-filter=".adult">Adult</a></li>
+      <li><a href="#" data-filter=".child">Child</a></li>
+      <li><a href="#" data-filter=".pet">Pet</a></li>
     </ul>
   </div>
 
-  <div class="row ws-m no-padding">
+  <div class="row ws-m no-padding" style="padding-top:10px;padding-bottom:20px">
     <div id="pfolio">
 
     <% @resources.each do |resource| %>
       <!-- Item 1 -->
-      <div class="col-md-3 portfolio-item print">
+      <% if resource.owner == "acs" %>
+        <div class="col-md-3 portfolio-item adult child senior">
+      <% elsif resource.owner == "as" %>
+        <div class="col-md-3 portfolio-item adult senior">
+      <% elsif resource.owner == "cps" %>
+        <div class="col-md-3 portfolio-item child pet senior">
+      <% elsif resource.owner == "p" %>
+        <div class="col-md-3 portfolio-item pet">
+      <% else %>
+        <div class="col-md-3 portfolio-item adult child senior pet">
+      <% end %>
+
         <div class="p-wrapper hover-default">
-          <img src="http://placehold.it/990x650" alt="Project Example">
+          <img src="http://placehold.it/1200x650" alt="Project Example">
           <div class="p-hover">
-            <div class="p-content"></h4>
-              <h6 class="subheading"><%= resource.teaser %></h6>
+            <div class="p-content">
+               <br><h6 style="color:dodgerblue"><%= resource.category %></h6>
+              <div class="subheading" style="color:white;line-height: 1.2em;"><%= resource.description %></div>
             </div>
           </div>
-          <a href="/resources/1" class="open-btn"><i class="fa fa-expand"></i></a>
         </div>
       </div><!-- / .portfolio-item -->
 

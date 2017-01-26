@@ -1,4 +1,5 @@
 class ScenariosController < ApplicationController
+    before_action :authenticate_user!
 
   def index
     @scenarios = Scenario.all

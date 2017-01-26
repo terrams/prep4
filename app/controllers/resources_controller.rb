@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @resources = Resource.all
     render "index.html.erb"

@@ -6,7 +6,7 @@
    
         <div class="col-sm-3 pad1">
           <div style="float:left">
-            <a href="/logout"><img src="../assets/images/logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+            <a href="/"><img src="../assets/images/logo.png" height="100px" width="170px" alt="Prepper logo"></a>
           </div>
         </div>
         <div class="col-sm-9 pad1">
@@ -36,17 +36,15 @@
 
             <!-- Item -->
             <li>
-              <span class="linea-basic-headset ft-icon"></span>
+              <span class="<%= scenario.icon %> ft-icon"></span>
               <h5><%= scenario.name %></h5>
-              <h6 class="h-alt">Lorem Ipsum Dolor</h6>
+              <h6 class="h-alt"><%= scenario.tag %></h6>
 
               <div class="hover-content">
-                <span class="linea-basic-headset ft-icon"></span>
-                <span class="ft-heading">Chemical</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                </p>
-                <a href="#">Learn more</a>
+                <span class="<%= scenario.icon %> ft-icon"></span>
+                <span class="ft-heading"><%= scenario.name %></span>
+                <p><%= scenario.teaser %></p>
+                <a href="/scenario/<%= scenario.id %>">Learn more</a>
               </div><!-- / .hover-content -->
             </li>
             <!-- end Item -->

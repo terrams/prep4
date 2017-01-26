@@ -1,18 +1,23 @@
 <!-- ========== Page Title ========== -->
 <section>
-  <header class="pt-custom pt-dark">
+  <header class="pt-custom pt-dark" style="background-image: url('../hdr-zombie.jpg')" >
     <div class="container">
       <div class="row">
    
-        <div class="col-sm-3 pad1">
+        <div class="col-sm-9 pad1">
           <div style="float:left">
-            <a href="/logout"><img src="../logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+            <a href="/"><img src="../logo.png" height="100px" width="170px" alt="Prepper logo"></a>
           </div>
         </div>
-        <div class="col-sm-9">
-          <div class="myheader"></div>
+        <div class="col-sm-3">
+          <div style="margin: 55px 0px 0px 20px;
+                      font-size: 1em;
+                      letter-spacing: 4px;
+                      color: #fff;
+                      display: inline;
+                      float:right;">View Member</div>
         </div>
-
+  
       </div>
     </div>
   </header>
@@ -27,10 +32,10 @@
 
 <section>
   <div class="row ws-s no-padding">
-    <div class="col-md-offset-1 col-md-3">
-      <img src="../avatar-placeholder.png" height="300px" width="175px">
+    <div class="col-md-offset-1 col-md-4">
+      <img src="/<%= @member.photo %>" height="440px" width="360px" style="margin-bottom:20px">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
       <div class="row ws-s no-padding">
         <div class="col-md-12">
           <h5>General Information</h5>
@@ -43,15 +48,17 @@
           <div><b>Type:</b></div>
           <div><b>Gender:</b></div>
           <div><b>Active:</b></div>
+          <div><b>Bugout kit completed:</b></div>
           <div><b>Special Needs:</b></div>        
         </div>
         <div class="col-md-9">
-          <div><%= @member.first_name %></div>
-          <div><%= @member.last_name %></div>
-          <div><%= @member.member_type %></div>
-          <div><%= @member.gender %></div>
-          <div><%= @member.active %></div>
-          <div><%= @member.special_needs %></div>
+          <div><%= @member.first_name %>&nbsp;</div>
+          <div><%= @member.last_name %>&nbsp;</div>
+          <div><%= @member.member_type %>&nbsp;</div>
+          <div><%= @member.gender %>&nbsp;</div>
+          <div><% if @member.active %>Yes<% else %>No<% end %>&nbsp;</div>
+          <div><% if @member.kit %>Yes<% else %><span style="color:red"><b>No</b></span><% end %>&nbsp;</div>         
+          <div><%= @member.special_needs %>&nbsp;</div>
         </div>
       </div>
       <div class="row ws-s no-padding">
@@ -61,14 +68,14 @@
       </div>
       <div class="row ws-s no-padding">
         <div class="col-md-3">
-          <div><b>Work Phone:</b></div>
+          <div><b>Day Phone:</b></div>
           <div><b>Cell Phone:</b></div>
           <div><b>Email:</b></div>
         </div>
         <div class="col-md-9">
-          <div><%= @member.work_phone %></div>
-          <div><%= @member.cell_phone %></div>
-          <div><%= @member.email %></div>
+          <div><%= @member.work_phone %>&nbsp;</div>
+          <div><%= @member.cell_phone %>&nbsp;</div>
+          <div><%= @member.email %>&nbsp;</div>
         </div>
       </div>
       <div class="row ws-s no-padding">
