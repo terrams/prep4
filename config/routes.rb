@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/resources/:id' => 'resources#show'           
 
   get '/scenarios' => 'scenarios#index'
-  get '/scenarios/:id' => 'scenarios#show"'
+  get '/scenarios/:id' => 'scenarios#show'
 
   get '/' => 'users#landing'
   get  '/signup' => 'users#new'

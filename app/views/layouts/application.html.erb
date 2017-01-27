@@ -31,11 +31,11 @@
         <link rel="stylesheet" href="/assets/styles/xapp.css">
 
         <!-- JS -->
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
         <%= csrf_meta_tags %>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
     </head>
     <body id="page-top">
         
@@ -46,11 +46,9 @@
 
         <!-- ========== Preloader ========== -->
 
-        <% if current_page?('/') %> 
           <div class="preloader">
-            <img src="../assets/images/loader.svg" alt="Loading...">
+            <img src="/assets/images/loader.svg" alt="Loading...">
           </div>  
-        <% end %>      
 
         <!-- ========== Navigation ========== -->
 
@@ -128,26 +126,15 @@
                   <h5 class="header-widget">Instagram Feed</h5>
                   <ul>
 
-                  <% if current_page?('/') %>
 
-                    <li><a href="fire_650x450.png" class="gallery-widget-lightbox"><img src="fire-87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
+                    <li><a href="/fire_650x450.png" class="gallery-widget-lightbox"><img src="/fire-87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
 
-                    <li><a href="flood_650x450.png" class="gallery-widget-lightbox"><img src="flood_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
+                    <li><a href="/flood_650x450.png" class="gallery-widget-lightbox"><img src="/flood_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
 
-                    <li><a href="hurricane_650x450.png" class="gallery-widget-lightbox"><img src="hurricane_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
+                    <li><a href="/hurricane_650x450.png" class="gallery-widget-lightbox"><img src="/hurricane_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
 
-                    <li><a href="power_650x450.png" class="gallery-widget-lightbox"><img src="power_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
+                    <li><a href="/power_650x450.png" class="gallery-widget-lightbox"><img src="/power_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
 
-                  <% else %>
-                    <li><a href="../fire_650x450.png" class="gallery-widget-lightbox"><img src="../fire-87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="../flood_650x450.png" class="gallery-widget-lightbox"><img src="../flood_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="../hurricane_650x450.png" class="gallery-widget-lightbox"><img src="../hurricane_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                    <li><a href="../power_650x450.png" class="gallery-widget-lightbox"><img src="../power_87x87.png" alt="Instagram Image"><div class="hover-link"><span class="linea-arrows-plus"></span></div></a></li>
-
-                  <% end %>
 
                   </ul>
                 </div><!-- / .widget -->
@@ -199,33 +186,33 @@
 
         <!-- ========== Scripts ========== -->
 
-        <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/vendor/google-fonts.js"></script>
-        <script src="assets/js/vendor/jquery.easing.js"></script>
-        <script src="assets/js/vendor/jquery.waypoints.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <script src="assets/js/vendor/bootstrap-hover-dropdown.min.js"></script>
-        <script src="assets/js/vendor/smoothscroll.js"></script>
-        <script src="assets/js/vendor/jquery.localScroll.min.js"></script>
-        <script src="assets/js/vendor/jquery.scrollTo.min.js"></script>
-        <script src="assets/js/vendor/jquery.stellar.min.js"></script>
-        <script src="assets/js/vendor/jquery.parallax.js"></script>
-        <script src="assets/js/vendor/slick.min.js"></script>
-        <script src="assets/js/vendor/jquery.easypiechart.min.js"></script>
-        <script src="assets/js/vendor/countup.min.js"></script>
-        <script src="assets/js/vendor/isotope.min.js"></script>
-        <script src="assets/js/vendor/packery-mode.pkgd.min.js"></script>
-        <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/vendor/wow.min.js"></script>
-        <script src="assets/js/vendor/jquery.mb.YTPlayer.min.js"></script>
-        <script src="assets/js/vendor/jquery.ajaxchimp.js"></script>
+        <script src="/assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="/assets/js/vendor/google-fonts.js"></script>
+        <script src="/assets/js/vendor/jquery.easing.js"></script>
+        <script src="/assets/js/vendor/jquery.waypoints.min.js"></script>
+        <script src="/assets/js/vendor/bootstrap.min.js"></script>
+        <script src="/assets/js/vendor/bootstrap-hover-dropdown.min.js"></script>
+        <script src="/assets/js/vendor/smoothscroll.js"></script>
+        <script src="/assets/js/vendor/jquery.localScroll.min.js"></script>
+        <script src="/assets/js/vendor/jquery.scrollTo.min.js"></script>
+        <script src="/assets/js/vendor/jquery.stellar.min.js"></script>
+        <script src="/assets/js/vendor/jquery.parallax.js"></script>
+        <script src="/assets/js/vendor/slick.min.js"></script>
+        <script src="/assets/js/vendor/jquery.easypiechart.min.js"></script>
+        <script src="/assets/js/vendor/countup.min.js"></script>
+        <script src="/assets/js/vendor/isotope.min.js"></script>
+        <script src="/assets/js/vendor/packery-mode.pkgd.min.js"></script>
+        <script src="/assets/js/vendor/jquery.magnific-popup.min.js"></script>
+        <script src="/assets/js/vendor/wow.min.js"></script>
+        <script src="/assets/js/vendor/jquery.mb.YTPlayer.min.js"></script>
+        <script src="/assets/js/vendor/jquery.ajaxchimp.js"></script>
 
         <!-- Google Maps -->
-        <script src="assets/js/gmap.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcd7o0W0r846FC_GoHSK56xeAvP8fV4s"></script>
+        <!-- <script src="/assets/js/gmap.js"></script> -->
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOcd7o0W0r846FC_GoHSK56xeAvP8fV4s"></script> -->
 
         <!-- Definity JS -->
-        <script src="assets/js/main.js"></script>
+        <script src="/assets/js/main.js"></script>
     </body>
 </html>
 

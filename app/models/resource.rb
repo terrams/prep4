@@ -1,6 +1,6 @@
 class Resource < ApplicationRecord
 
-  has_many :group_resources
-  has_many :member_resources
+  has_many :group_re
+  has_many :member_resourcessources
 
 end

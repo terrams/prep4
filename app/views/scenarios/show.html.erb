@@ -1,1 +1,98 @@
-show.html.erb
+<!-- ========== Page Title ========== -->
+<section>
+  <header class="pt-custom pt-dark" style="background-image: url('../hdr-zombie.jpg')" >
+    <div class="container">
+      <div class="row">
+   
+        <div class="col-sm-9 pad1">
+          <div style="float:left">
+            <a href="/"><img src="../assets/images/logo.png" height="100px" width="170px" alt="Prepper logo"></a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div style="margin: 55px 0px 0px 20px;
+                      font-size: 1em;
+                      letter-spacing: 4px;
+                      color: #fff;
+                      display: inline;
+                      float:right;">Scenarios</div>
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+</section>
+
+
+<!-- ========== Features - Centerd Image ========== -->
+
+<section class="container section ft-x" style="padding-top:0px;padding-bottom:0px;margin-top:20px">
+  <div class="row" style="margin-bottom:50px">
+    
+    <header class="sec-heading" style="padding-top:20px;padding-bottom:0px;margin-bottom:50px">
+      <h2><%= @scenario.name %></h2>
+      <span class="subheading"><%= @scenario.teaser %></span>
+    </header>
+
+    <!-- Feature 1 -->
+    <div class="col-lg-4 wow fadeInLeft" data-wow-duration=".8s">
+      
+      <!-- white space -->
+      <div class="ws-m"></div>
+
+      <!-- Material right aligned - Item 1 -->
+      <div class="col-md-12 no-gap ws-s ft-item ft-material right-align">
+        <div class="ft-content">
+          <h5>Best Response</h5>
+          <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius.</p>
+        </div>
+        <div class="ft-icon">
+          <i class="fa fa-hand-peace-o"></i>
+        </div>
+      </div><!-- / .ft-item -->
+
+      <!-- Material right aligned - Item 2 -->
+      <div class="col-md-12 no-gap ws-s ft-item ft-material right-align">
+        <div class="ft-content">
+          <h5>Additional Supplies</h5>
+          <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius.</p>
+        </div>
+        <div class="ft-icon">
+          <i class="fa fa-tv"></i>
+        </div>
+      </div><!-- / .ft-item -->
+
+    </div><!-- / .col-lg-4 -->      
+
+    <!-- Center Image -->
+    <div class="col-lg-4">
+      <img src="http://placehold.it/360x600" alt="iPad cover" class="img-responsive center-block wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+    </div>
+
+    <!-- Features Left -->
+    <div class="col-lg-4 wow fadeInRight"  data-wow-duration=".8s">
+      
+      <!-- white space -->
+      <div class="ws-m"></div>
+      
+      <!-- Item 3 -->
+      <div class="col-md-12 no-gap ws-s ft-item ft-material">
+        <i class="fa fa-cogs"></i>
+        <h5>Likelyhood</h5>
+        <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius, vero.</p>
+      </div><!-- / .ft-item -->
+
+      <!-- Item 4 -->
+      <div class="col-md-12 no-gap ws-s ft-item ft-material">
+        <i class="fa fa-star"></i>
+        <h5>Biggest Threat</h5>
+        <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius, vero.</p>
+      </div><!-- / .ft-item -->
+
+    </div><!-- / .col-lg-4 -->
+
+  </div><!-- / .row -->
+</section><!-- / .container -->
+
+
