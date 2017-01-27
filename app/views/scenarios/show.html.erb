@@ -30,7 +30,7 @@
 <section class="container section ft-x" style="padding-top:0px;padding-bottom:0px;margin-top:20px">
   <div class="row" style="margin-bottom:50px">
     
-    <header class="sec-heading" style="padding-top:20px;padding-bottom:0px;margin-bottom:50px">
+    <header class="sec-heading" style="padding-top:20px;padding-bottom:0px;margin-bottom:70px">
       <h2><%= @scenario.name %></h2>
       <span class="subheading"><%= @scenario.teaser %></span>
     </header>
@@ -45,7 +45,7 @@
       <div class="col-md-12 no-gap ws-s ft-item ft-material right-align">
         <div class="ft-content">
           <h5>Best Response</h5>
-          <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius.</p>
+          <p><%= @scenario.response %></p>
         </div>
         <div class="ft-icon">
           <i class="fa fa-hand-peace-o"></i>
@@ -56,7 +56,7 @@
       <div class="col-md-12 no-gap ws-s ft-item ft-material right-align">
         <div class="ft-content">
           <h5>Additional Supplies</h5>
-          <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius.</p>
+          <p><%= @scenario.supplies %></p>
         </div>
         <div class="ft-icon">
           <i class="fa fa-tv"></i>
@@ -80,14 +80,14 @@
       <div class="col-md-12 no-gap ws-s ft-item ft-material">
         <i class="fa fa-cogs"></i>
         <h5>Likelyhood</h5>
-        <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius, vero.</p>
+        <p><%= @scenario.likelyhood %></p>
       </div><!-- / .ft-item -->
 
       <!-- Item 4 -->
       <div class="col-md-12 no-gap ws-s ft-item ft-material">
         <i class="fa fa-star"></i>
         <h5>Biggest Threat</h5>
-        <p>Lorem ipsum dolor sit amet, ete elit consectetur adipisicing. Omnis quae, ipsam impedit eius, vero.</p>
+        <p><%= @scenario.threat %></p>
       </div><!-- / .ft-item -->
 
     </div><!-- / .col-lg-4 -->
